@@ -1,0 +1,146 @@
+body{
+    margin: 0px;
+    font-family:sans-serif ;
+}
+
+
+.main-header{
+    min-height: 100vh;
+    background-color: red;
+    background-size : cover;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding-bottom: 20px;
+}
+
+.main-header::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width:100%;
+    height:200px;
+    background: url(tree.png);
+}
+
+.snow1, .snow2{
+    position:absolute;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url(snow.png);
+    background-position: 0 0;
+}
+
+.snow1{
+    background-size:70em;
+    animation: snowfall 30s linear infinite;
+}
+
+.snow2{
+    background-size:50em;
+        animation:snowfall1 30s linear infinite;
+    opacity:0.5;
+}
+
+.container{
+    color: #fff;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: calc(10% + 350px + 12px); 
+    z-index: 10;
+    text-align: center;
+    width: auto;
+} 
+.animate{
+    display: block;
+    font-size: clamp(1.6rem, 4vw, 4rem);
+    font-family: lobster, cursive;
+    text-shadow: 5px 5px 10px #111;
+    margin: 0;
+    padding: 0 0.5rem;
+} 
+
+@keyframes snowfall{
+    100%{background-position: 70em 70em}
+}
+
+@keyframes snowfall1{
+    100%{
+        background-position: -50em 50em;
+    }
+}
+
+.circle{
+    position:absolute;
+    top:10%;
+    left:50%;
+    transform: translateX(-50%);
+    width:350px;
+    height: 350px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.circle::before{
+    content:'';
+    inset: -200px -300px;
+    position:absolute;
+    background: url(santa.png) no-repeat center;
+    background-size: 600px;
+    animation: santa-move 3s ease-in-out infinite;
+}
+
+@keyframes santa-move{
+    0% , 100%{
+        transform: translateY(-25px);
+    }
+    50%{
+        transform: translateY(25px);
+    }
+}
+
+/*Phone*/
+@media (max-width: 600px) {
+    .main-header {
+        padding-bottom: 24px;
+        align-items: flex-end;
+    }
+
+    .container {
+        position: absolute;
+        top: calc(6% + 220px + 8px);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0 1rem;
+        z-index: 10;
+    }
+
+    .animate {
+        font-size: 2rem;
+        text-align: center;
+        margin: 0;
+        padding: 0 .5rem;
+    }
+
+    .circle {
+        width: 220px;
+        height: 220px;
+        top: 6%;
+    }
+
+    .circle::before {
+        background-size: 420px;
+        inset: -140px -120px;
+    }
+
+    .snow1, .snow2 {
+        background-size: 40em;
+    }
+}
