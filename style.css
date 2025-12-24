@@ -110,7 +110,7 @@ body{
         flex-direction: column;
         justify-content: flex-start;
         align-items: center;
-        padding-top: 8vh;
+        padding-top: 15vh;
         overflow: hidden;
     }
 
@@ -120,7 +120,7 @@ body{
         position: relative;
         left: 0;
         transform: none;
-        margin-bottom: 15px;
+        margin-bottom: 20px;
         z-index: 2;
     }
 
@@ -140,7 +140,8 @@ body{
         flex-direction: column;
         align-items: center;
         z-index: 10;
-        padding: 0;
+        padding: 0 20px;
+        box-sizing: border-box;
     }
 
     .animate {
@@ -153,15 +154,17 @@ body{
     }
 
     .container p {
-        margin: 10px 0 0 0;
+        margin: 15px 0 0 0;
         font-size: 1.1rem;
+        line-height: 1.5;
         text-align: center;
         display: block;
         width: 100%;
+        color: white;
     }
 
     .main-header::after {
-        height: 45vh;
+        height: 55vh;
         background-size: cover;
         background-position: center bottom;
         bottom: 0;
