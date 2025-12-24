@@ -104,58 +104,71 @@ body{
 }
 
 /*Phone*/
-/* Optimized Phone View */
 @media (max-width: 600px) {
     .main-header {
         display: flex;
-        flex-direction: column; 
-        justify-content: flex-start; 
+        flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
-        padding-top: 20px;
+        padding-top: 8vh;
+        overflow: hidden;
     }
 
     .circle {
-        width: 180px; 
-        height: 180px;
-        top: 5%; 
-        position: relative; 
-        transform: translateX(0);
+        width: 220px;
+        height: 220px;
+        position: relative;
         left: 0;
+        transform: none;
+        margin-bottom: 15px;
+        z-index: 2;
     }
 
     .circle::before {
-        background-size: 350px;
-        inset: -120px -85px;
+        background-size: 400px;
+        inset: -130px -110px; 
+        animation: santa-move 3s ease-in-out infinite;
     }
 
     .container {
-        position: relative; 
-        top: 20px; 
+        position: relative;
+        top: 0;
         left: 0;
         transform: none;
-        width: 90%;
+        width: 100%;
         display: flex;
-        flex-direction: column; 
+        flex-direction: column;
         align-items: center;
-        gap: 10px; 
+        z-index: 10;
+        padding: 0;
     }
 
     .animate {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
         text-align: center;
-        line-height: 1.2;
+        margin: 0;
+        padding: 0;
+        display: block;
+        width: 100%;
     }
 
     .container p {
-        margin: 0;
-        font-size: 1rem;
-        opacity: 0.9;
+        margin: 10px 0 0 0;
+        font-size: 1.1rem;
+        text-align: center;
+        display: block;
+        width: 100%;
     }
 
     .main-header::after {
-        height: 150px; 
-        background-size: contain;
-        background-repeat: repeat-x;
-        bottom: 0; 
+        height: 45vh;
+        background-size: cover;
+        background-position: center bottom;
+        bottom: 0;
+        z-index: 5;
+    }
+
+    .snow1, .snow2 {
+        background-size: 30em;
     }
 }
